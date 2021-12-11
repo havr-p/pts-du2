@@ -5,35 +5,24 @@ import java.util.Comparator;
 import java.util.Optional;
 
 public class Time implements Comparable<Time>{
-    private Integer hour;
-    private Integer minute;
+    private Integer time;
 
-    public Time(int hour, int minute) {
-        this.hour = hour;
-        this.minute = minute;
+    public Time(int time) {
+        this.time = time;
     }
 
-    public int getHour() {
-        return hour;
-    }
-    public int getMinute() {
-        return minute;
+    public Time() {
     }
 
-
-    public void setHour(int hour) {
-        this.hour = hour;
+    public int getTime() {
+        return time;
     }
 
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + hour;
-        hash = 31 * hash + minute;
+        hash = 31 * hash + time;
         return hash;
     }
 
@@ -43,21 +32,19 @@ public class Time implements Comparable<Time>{
         if (o == null) return false;
         if (this.getClass() != o.getClass()) return false;
         else {
-            return (((Time) o).hour.equals(this.hour) && ((Time) o).minute.equals(minute));
+            return ((Time) o).time.equals(this.time);
         }
     }
 
     @Override
     public String toString() {
-        return hour + ":" + minute;
+        return time.toString();
     }
 
     @Override
     public int compareTo(Time t) {
-        if (hour.equals(t.hour)) {
-            return minute.compareTo(t.minute);
-        }
-        return hour.compareTo(t.hour);
+
+        return time.compareTo(t.time);
     }
 
 

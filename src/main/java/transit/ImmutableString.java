@@ -1,7 +1,7 @@
 package transit;
 
 public class ImmutableString {
-    final String immutableString;
+    private final String immutableString;
     public ImmutableString(String s) {
         immutableString = s;
     }
